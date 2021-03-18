@@ -1,5 +1,6 @@
 package com.example.wheeler_blake_assign_8
 
+import android.annotation.SuppressLint
 import android.media.Image
 import android.os.Bundle
 import android.view.animation.AnimationUtils
@@ -9,11 +10,12 @@ import com.example.wheeler_blake_assign_8.Dice
 import com.example.wheeler_blake_assign_8.R
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
     //1st edition
     //private var dice: Dice = Dice(0)
     //trying something new to store data in class
-    private var dice: Dice = Dice(0,0,0,0)
+    private var dice: Dice = Dice(0,0,0,0,0)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -59,8 +61,20 @@ class MainActivity : AppCompatActivity() {
                else -> _iv3.setImageResource(R.drawable.die_6)
            }
 
-            _totalScore.text = dice._totalValue.toString()
+            when {
+                dice._totalValue >= 50 -> {
+                    _enhancer.text = "Double: +50"
+                }
+                dice._totalValue >= 100 -> {
+                    _enhancer.text = "Triple: +100"
+                }
+                else -> {
+                    _enhancer.text = "No Score Enhancer"
+                }
+            }
 
+            _totalScore.text = dice._totalValue.toString()
+            _Score.text = "Score: ${dice._totalScore}"
 
         }
 

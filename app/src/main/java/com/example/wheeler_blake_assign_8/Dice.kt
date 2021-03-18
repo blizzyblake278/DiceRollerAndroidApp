@@ -6,7 +6,7 @@ import com.example.wheeler_blake_assign_8.R.*
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class Dice(var _totalValue: Int, var _dieResult1: Int, var _dieResult2: Int, var _dieResult3: Int): Parcelable {
+class Dice(var _totalValue: Int, var _dieResult1: Int, var _dieResult2: Int, var _dieResult3: Int, var _totalScore : Int): Parcelable {
 
     fun rollDice(){
 //        val num = (1..6).random()
@@ -17,9 +17,19 @@ class Dice(var _totalValue: Int, var _dieResult1: Int, var _dieResult2: Int, var
         _totalValue = _dieResult1 + _dieResult2 + _dieResult3
 
 
-
-
-
+        // if triples then total value + 100
+           if(_dieResult1 == _dieResult2 && _dieResult2 == _dieResult3){
+               _totalValue += 100
+            }
+            //if doubles rolled, then total value + 50
+            else if(_dieResult1 == _dieResult2 || _dieResult2 == _dieResult3 || _dieResult1 == _dieResult3){
+                    _totalValue += 50
+            }
+        else{
+            _totalValue
+        }
+        //total of all rolls
+        _totalScore += _totalValue
     }
 
     fun resetResults() {

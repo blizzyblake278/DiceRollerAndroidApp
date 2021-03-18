@@ -5,4 +5,5 @@
     <string name="roll_the_dice">Roll the Dice</string>
     <string name="total_score">Total Score</string>
     <string name="todo">TODO</string>
+    <string name="score_this_roll">Score this Roll:</string>
 </resources>

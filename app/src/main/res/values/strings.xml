@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dice Game</string>
+    <string name="_clickMe">Click Me</string>
+    <string name="result_of_dice_roll">Result of Dice Roll</string>
+    <string name="roll_the_dice">Roll the Dice</string>
+    <string name="total_score">Total Score</string>
+    <string name="todo">TODO</string>
+</resources>

@@ -24,7 +24,9 @@ class MainActivity : AppCompatActivity() {
 //        _txtDieResult2.text = dice._dieResult2.toString()
 //        _txtDieResult3.text = dice._dieResult3.toString()
         dice.resetResults()
-
+        val doubleString : String = getString(R.string.enhance_double)
+        val tripleString : String = getString(R.string.enhance_triple)
+        val noEnhanceString : String = getString(R.string.enhance_none)
 
 
         _btnRoll.setOnClickListener {
@@ -63,18 +65,18 @@ class MainActivity : AppCompatActivity() {
 
             when {
                 dice._totalValue >= 50 -> {
-                    _enhancer.text = "Double: +50"
+                    _enhancer.text = doubleString
                 }
                 dice._totalValue >= 100 -> {
-                    _enhancer.text = "Triple: +100"
+                    _enhancer.text = tripleString
                 }
                 else -> {
-                    _enhancer.text = "No Score Enhancer"
+                    _enhancer.text = noEnhanceString
                 }
             }
 
             _totalScore.text = dice._totalValue.toString()
-            _Score.text = "Score: ${dice._totalScore}"
+            _Score.text = ("Score: ${dice._totalScore}")
 
         }
 
@@ -86,6 +88,9 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(savedInstanceState: Bundle) {
         //Saves current game state
         savedInstanceState.putParcelable("myDice", dice)
+        _iv1
+        _iv2
+        _iv3
         super.onSaveInstanceState(savedInstanceState)
     }
 
@@ -98,8 +103,9 @@ class MainActivity : AppCompatActivity() {
         _iv1
         _iv2
         _iv3
-
+        _enhancer.text
         _totalScore.text = dice._totalValue.toString()
+        _Score.text = ("Score: ${dice._totalScore}")
 
         super.onRestoreInstanceState(savedInstanceState)
 

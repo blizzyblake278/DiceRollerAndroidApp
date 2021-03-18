@@ -11,12 +11,12 @@
         android:id="@+id/_totalScore"
         android:layout_width="226dp"
         android:layout_height="36dp"
-        android:layout_marginBottom="24dp"
+        android:gravity="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/_btnRoll"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_lblScoreThisRoll" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -49,10 +49,9 @@
         android:contentDescription="@string/result_of_dice_roll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051"
+        app:layout_constraintVertical_bias="0.106"
         app:srcCompat="@drawable/die_2" />
 
     <ImageView
@@ -62,10 +61,10 @@
         android:contentDescription="@string/result_of_dice_roll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toEndOf="@+id/_iv2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051"
+        app:layout_constraintVertical_bias="0.106"
         app:layout_constraintVertical_chainStyle="spread"
         app:srcCompat="@drawable/die_3" />
 
@@ -76,11 +75,11 @@
         android:contentDescription="@string/result_of_dice_roll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/_iv2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051"
+        app:layout_constraintVertical_bias="0.107"
         app:srcCompat="@drawable/die_1" />
 
     <Button
@@ -129,6 +128,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/almendra_sc"
         android:text="@string/score_this_roll"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/_btnRoll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"

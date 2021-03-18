@@ -6,4 +6,8 @@
     <string name="total_score">Total Score</string>
     <string name="todo">TODO</string>
     <string name="score_this_roll">Score this Roll:</string>
+    <string name="enhance_double">Double: +50</string>
+    <string name="enhance_triple">Triple: +100</string>
+    <string name="enhance_none">No Score Enhance</string>
+
 </resources>

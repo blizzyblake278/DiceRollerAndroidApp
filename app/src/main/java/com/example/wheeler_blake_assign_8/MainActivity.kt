@@ -11,6 +11,7 @@ import com.example.wheeler_blake_assign_8.Dice
 import com.example.wheeler_blake_assign_8.R
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 
 
 class MainActivity : AppCompatActivity() {
@@ -51,10 +52,31 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-
-        return super.onCreateOptionsMenu(menu)
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
     }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+    R.id.About -> {
+        val name = getString(R.string.name)
+        val descr = getString(R.string.game_description)
+        val estDate = getString(R.string.est_date)
+        val builder =  AlertDialog.Builder(this)
+        builder.setTitle(R.string._about)
+        builder.setMessage(name + descr + estDate)
+        val alertDialog : AlertDialog = builder.create()
+        alertDialog.show()
+        true
+    }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+
+    // Private Functions
     private fun setImages() {
         //sets 1st imageView to die roll based off dieResult1
         when (dice._dieResult1) {

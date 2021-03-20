@@ -9,5 +9,7 @@
     <string name="enhance_double">Double: +50</string>
     <string name="enhance_triple">Triple: +100</string>
     <string name="enhance_none">No Score Enhance</string>
+    <string name="score_total">Score:</string>
+
 
 </resources>

@@ -1,14 +1,9 @@
-package com.example.wheeler_blake_assign_8
+package com.example.dice_roller_app
 
-import android.annotation.SuppressLint
-import android.media.Image
 import android.os.Bundle
 import android.view.Menu
 import android.view.animation.AnimationUtils
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.wheeler_blake_assign_8.Dice
-import com.example.wheeler_blake_assign_8.R
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog

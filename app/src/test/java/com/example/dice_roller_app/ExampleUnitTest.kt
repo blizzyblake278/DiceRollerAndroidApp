@@ -1,4 +1,4 @@
-package com.example.wheeler_blake_assign_8
+package com.example.dice_roller_app
 
 import org.junit.Test
 

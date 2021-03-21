@@ -5,7 +5,7 @@
     android:id="@+id/_total"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.wheeler_blake_assign_8.MainActivity">
+    tools:context="com.example.dice_roller_app.MainActivity">
 
     <TextView
         android:id="@+id/_totalScore"

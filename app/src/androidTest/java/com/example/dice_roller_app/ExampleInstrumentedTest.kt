@@ -1,4 +1,4 @@
-package com.example.wheeler_blake_assign_8
+package com.example.dice_roller_app
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

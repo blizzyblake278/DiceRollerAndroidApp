@@ -14,6 +14,7 @@
     <string name="game_description">Game Description: Rolls 3 dice,for now\n</string>
     <string name="est_date">Established Date: 3/18/2021\n</string>
     <string name="_about">About</string>
+    <string name="launch_scoreboardBTN">Launch Scoreboard</string>
 
 
 </resources>

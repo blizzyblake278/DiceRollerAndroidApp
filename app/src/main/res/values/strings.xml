@@ -9,7 +9,7 @@
     <string name="enhance_double">Double: +50</string>
     <string name="enhance_triple">Triple: +100</string>
     <string name="enhance_none">No Score Enhance</string>
-    <string name="score_total">Score:</string>
+    <string name="score_total">Total Score:</string>
     <string name="name">Name: Blake Wheeler\n</string>
     <string name="game_description">Game Description: Rolls 3 dice,for now\n</string>
     <string name="est_date">Established Date: 3/18/2021\n</string>

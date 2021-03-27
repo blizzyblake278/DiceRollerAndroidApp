@@ -1,5 +1,6 @@
 package com.example.dice_roller_app
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.animation.AnimationUtils
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         //sets dice images to 1,2,3
         dice.resetResults()
 
+        //roll dice
         _btnRoll.setOnClickListener {
             val animateSpin = AnimationUtils.loadAnimation(this, R.anim.spin)
             _btnRoll.startAnimation(animateSpin)
@@ -27,6 +29,15 @@ class MainActivity : AppCompatActivity() {
             totalScore()
 
         }
+
+        //leader board
+//        _secondActBtn.setOnClickListener(){
+//            val scoreBoardintent = Intent(this, SecondAct::class.java)
+//            intent.putExtra("personName", _personNameTxt.text.toString())
+//            intent.putExtra("key", score)
+//            startActivity(ScoreBoardintent)
+//
+//        }
     }
 
 

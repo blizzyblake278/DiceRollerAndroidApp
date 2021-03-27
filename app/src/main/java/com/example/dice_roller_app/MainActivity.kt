@@ -31,13 +31,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         //leader board
-//        _secondActBtn.setOnClickListener(){
-//            val scoreBoardintent = Intent(this, SecondAct::class.java)
-//            intent.putExtra("personName", _personNameTxt.text.toString())
-//            intent.putExtra("key", score)
-//            startActivity(ScoreBoardintent)
-//
-//        }
+        _secondActBtn.setOnClickListener(){
+            val scoreBoardintent = Intent(this, SecondAct::class.java)
+            intent.putExtra("personName", _PlayerName.text.toString())
+            intent.putExtra("key", _Score)
+            startActivity(scoreBoardintent)
+
+        }
     }
 
 

@@ -1,10 +1,7 @@
 <resources>
     <string name="app_name">Dice Game</string>
-    <string name="_clickMe">Click Me</string>
     <string name="result_of_dice_roll">Result of Dice Roll</string>
     <string name="roll_the_dice">Roll the Dice</string>
-    <string name="total_score">Total Score</string>
-    <string name="todo">TODO</string>
     <string name="score_this_roll">Score this Roll:</string>
     <string name="enhance_double">Double: +50</string>
     <string name="enhance_triple">Triple: +100</string>
@@ -18,6 +15,7 @@
     <string name="_nameTv">NAME:</string>
     <string name="type_name_here">type name here</string>
     <string name="scoreboard">SCOREBOARD</string>
+    <string name="addColon">: </string>
 
 
 </resources>

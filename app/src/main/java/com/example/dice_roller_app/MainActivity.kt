@@ -5,22 +5,19 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.animation.AnimationUtils
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import android.view.MenuItem
-import android.view.TextureView
-import android.widget.EditText
-import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
-import org.w3c.dom.Text
 
 
 @Suppress("UNSAFE_CALL_ON_PARTIALLY_DEFINED_RESOURCE")
 class MainActivity : AppCompatActivity() {
 
     private var dice: Dice = Dice(0,0,0,0,0)
-    var scoreList : ArrayList<Double> = ArrayList()
+//    private var scoreList : ArrayList<Double> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,17 +38,24 @@ class MainActivity : AppCompatActivity() {
             setImages()
             totalScore()
 
+            //Shared Preferences - persistent storage
+            editor.putString("playerName", _PlayerName.text.toString())
+            editor.putString("playerScore", dice._totalScore.toString())
+            editor.apply()
+
         }
 
-        //leader board
+        //ScoreBoard
         _secondActBtn.setOnClickListener {
-               val scoreBoardIntent = Intent(this, Scoreboard::class.java)
-               intent.putExtra("playerName", _PlayerName.text.toString())
-               startActivity(scoreBoardIntent)
+            val scoreBoardIntent = Intent(this, Scoreboard::class.java)
+            val playerName = sharedPreference.getString("playerName", null)
+            val highScore = sharedPreference.getString("playerScore", null)
 
-            //Shared Preferences
-//            editor.putString("username", _PlayerName.text.toString())
-//            editor.apply()
+            scoreBoardIntent.putExtra("playerName", playerName)
+            scoreBoardIntent.putExtra("playerScore", highScore)
+            startActivity(scoreBoardIntent)
+
+
         }
     }
 
@@ -110,11 +114,7 @@ class MainActivity : AppCompatActivity() {
         _totalScore.text = scoreThisRoll
         _Score.text = totalScoreString
     }
-    private fun setPlayerInfo(){
-     val s = _Score.text.toString()
-      val score = s.toDouble()
-        scoreList.add(score)
-    }
+
     @Override
     override fun onSaveInstanceState(savedInstanceState: Bundle) {
         //Saves current game state

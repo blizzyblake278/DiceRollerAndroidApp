@@ -2,39 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/_total"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.dice_roller_app.MainActivity">
 
-    <TextView
-        android:id="@+id/_totalScore"
-        android:layout_width="230dp"
-        android:layout_height="22dp"
-        android:gravity="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/_btnRoll"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/_iv2"
-        app:layout_constraintVertical_bias="1.0" />
-
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="49dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -84,6 +68,7 @@
         app:layout_constraintVertical_bias="0.125"
         app:srcCompat="@drawable/die_1" />
 
+
     <Button
         android:id="@+id/_btnRoll"
         android:layout_width="185dp"
@@ -96,6 +81,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/_enhancer"
         app:layout_constraintVertical_bias="0.711" />
+
+    <Button
+        android:id="@+id/_secondActBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/launch_scoreboardBTN"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_totalScore"
+        app:layout_constraintVertical_bias="0.947" />
 
     <TextView
         android:id="@+id/_enhancer"
@@ -125,6 +122,18 @@
         app:layout_constraintTop_toBottomOf="@+id/_btnRoll" />
 
     <TextView
+        android:id="@+id/_totalScore"
+        android:layout_width="230dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/_btnRoll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/_iv2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
         android:id="@+id/_lblScoreThisRoll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -137,18 +146,6 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/_secondActBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/launch_scoreboardBTN"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_totalScore"
-        app:layout_constraintVertical_bias="0.947" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

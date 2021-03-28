@@ -17,6 +17,7 @@
     <string name="launch_scoreboardBTN">Launch Scoreboard</string>
     <string name="_nameTv">NAME:</string>
     <string name="type_name_here">type name here</string>
+    <string name="scoreboard">SCOREBOARD</string>
 
 
 </resources>

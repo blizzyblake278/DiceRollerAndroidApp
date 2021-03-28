@@ -7,28 +7,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.dice_roller_app.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_nameTv"
-        app:layout_constraintBottom_toTopOf="@+id/_iv1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474" />
-
-    <TextView
-        android:id="@+id/_totalScore"
-        android:layout_width="303dp"
-        android:layout_height="22dp"
-        android:gravity="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/_Score"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_lblScoreThisRoll" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
@@ -106,6 +84,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.778" />
 
+    <Button
+        android:id="@+id/_secondActBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/launch_scoreboardBTN"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_btnRoll" />
+
     <TextView
         android:id="@+id/_enhancer"
         android:layout_width="213dp"
@@ -135,6 +123,29 @@
         app:layout_constraintVertical_bias="0.686" />
 
     <TextView
+        android:id="@+id/_lblName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_nameTv"
+        app:layout_constraintBottom_toTopOf="@+id/_iv1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.474" />
+
+    <TextView
+        android:id="@+id/_totalScore"
+        android:layout_width="303dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/_Score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_lblScoreThisRoll" />
+
+    <TextView
         android:id="@+id/_lblScoreThisRoll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -146,16 +157,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/_secondActBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/launch_scoreboardBTN"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_btnRoll" />
 
     <EditText
         android:id="@+id/_PlayerName"

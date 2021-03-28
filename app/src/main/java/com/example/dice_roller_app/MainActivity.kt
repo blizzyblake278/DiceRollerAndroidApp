@@ -1,21 +1,34 @@
 package com.example.dice_roller_app
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.MenuItem
+import android.view.TextureView
+import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import org.w3c.dom.Text
 
 
+@Suppress("UNSAFE_CALL_ON_PARTIALLY_DEFINED_RESOURCE")
 class MainActivity : AppCompatActivity() {
 
     private var dice: Dice = Dice(0,0,0,0,0)
+    var scoreList : ArrayList<Double> = ArrayList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val sharedPreference : SharedPreferences = getSharedPreferences("DICE_ROLLER_APP", Context.MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+
 
         //sets dice images to 1,2,3
         dice.resetResults()
@@ -32,55 +45,16 @@ class MainActivity : AppCompatActivity() {
 
         //leader board
         _secondActBtn.setOnClickListener(){
-            val scoreBoardintent = Intent(this, SecondAct::class.java)
-            intent.putExtra("personName", _PlayerName.text.toString())
-            intent.putExtra("key", _Score)
-            startActivity(scoreBoardintent)
+            val scoreBoardIntent = Intent(this, Scoreboard::class.java)
+            intent.putExtra("playerName", _PlayerName.text.toString())
+            startActivity(scoreBoardIntent)
 
+
+            //Shared Preferences
+            editor.putString("username", _PlayerName.text.toString())
+            editor.apply()
         }
     }
-
-
-    @Override
-    override fun onSaveInstanceState(savedInstanceState: Bundle) {
-        //Saves current game state
-        savedInstanceState.putParcelable("myDice", dice)
-        super.onSaveInstanceState(savedInstanceState)
-    }
-
-    //2nd go at this
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        //restores data from functions
-        dice = savedInstanceState.getParcelable<Dice>("myDice")!!
-        setImages()
-        totalScore()
-        super.onRestoreInstanceState(savedInstanceState)
-
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.main_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-    R.id.About -> {
-        val name = getString(R.string.name)
-        val descr = getString(R.string.game_description)
-        val estDate = getString(R.string.est_date)
-        val builder =  AlertDialog.Builder(this)
-        builder.setTitle(R.string._about)
-        builder.setMessage(name + descr + estDate)
-        val alertDialog : AlertDialog = builder.create()
-        alertDialog.show()
-        true
-    }
-        else -> {
-            super.onOptionsItemSelected(item)
-        }
-    }
-
 
     // Private Functions
     private fun setImages() {
@@ -137,6 +111,53 @@ class MainActivity : AppCompatActivity() {
         _totalScore.text = scoreThisRoll
         _Score.text = totalScoreString
     }
+    private fun setPlayerInfo(){
+     val s = _Score.text.toString()
+      val score = s.toDouble()
+        scoreList.add(score)
+    }
+    @Override
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        //Saves current game state
+        savedInstanceState.putParcelable("myDice", dice)
+        super.onSaveInstanceState(savedInstanceState)
+    }
+
+    //2nd go at this
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        //restores data from functions
+        dice = savedInstanceState.getParcelable<Dice>("myDice")!!
+        setImages()
+        totalScore()
+        super.onRestoreInstanceState(savedInstanceState)
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+    R.id.About -> {
+        val name = getString(R.string.name)
+        val descr = getString(R.string.game_description)
+        val estDate = getString(R.string.est_date)
+        val builder =  AlertDialog.Builder(this)
+        builder.setTitle(R.string._about)
+        builder.setMessage(name + descr + estDate)
+        val alertDialog : AlertDialog = builder.create()
+        alertDialog.show()
+        true
+    }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+
+
 
 }
 

@@ -44,15 +44,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         //leader board
-        _secondActBtn.setOnClickListener(){
-            val scoreBoardIntent = Intent(this, Scoreboard::class.java)
-            intent.putExtra("playerName", _PlayerName.text.toString())
-            startActivity(scoreBoardIntent)
-
+        _secondActBtn.setOnClickListener {
+               val scoreBoardIntent = Intent(this, Scoreboard::class.java)
+               intent.putExtra("playerName", _PlayerName.text.toString())
+               startActivity(scoreBoardIntent)
 
             //Shared Preferences
-            editor.putString("username", _PlayerName.text.toString())
-            editor.apply()
+//            editor.putString("username", _PlayerName.text.toString())
+//            editor.apply()
         }
     }
 

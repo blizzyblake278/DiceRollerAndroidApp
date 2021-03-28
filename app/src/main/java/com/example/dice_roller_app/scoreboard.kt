@@ -26,9 +26,9 @@ class Scoreboard: AppCompatActivity() {
 //        scoreTV.text = score[0].toString()
 
 
-        val sharedPreference : SharedPreferences = getSharedPreferences("DICE_ROLLER_APP", Context.MODE_PRIVATE)
-        var toastMessage : String? = sharedPreference.getString("username", null)
-        Toast.makeText(this@Scoreboard, toastMessage, Toast.LENGTH_SHORT).show()
+//        val sharedPreference : SharedPreferences = getSharedPreferences("DICE_ROLLER_APP", Context.MODE_PRIVATE)
+//        var toastMessage : String? = sharedPreference.getString("username", null)
+//        Toast.makeText(this@Scoreboard, toastMessage, Toast.LENGTH_SHORT).show()
     }
 
 }

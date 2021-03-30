@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-@Suppress("UNSAFE_CALL_ON_PARTIALLY_DEFINED_RESOURCE")
+//@Suppress("UNSAFE_CALL_ON_PARTIALLY_DEFINED_RESOURCE")
 class MainActivity : AppCompatActivity() {
 
     private var dice: Dice = Dice(0,0,0,0,0)

@@ -7,16 +7,18 @@
     tools:context="com.example.dice_roller_app.MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="49dp" />
+        app:layout_constraintGuide_begin="54dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
@@ -34,10 +36,10 @@
         android:contentDescription="@string/result_of_dice_roll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125"
+        app:layout_constraintVertical_bias="0.202"
         app:srcCompat="@drawable/die_2" />
 
     <ImageView
@@ -47,10 +49,10 @@
         android:contentDescription="@string/result_of_dice_roll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/_iv2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125"
+        app:layout_constraintVertical_bias="0.202"
         app:layout_constraintVertical_chainStyle="spread"
         app:srcCompat="@drawable/die_3" />
 
@@ -61,26 +63,24 @@
         android:contentDescription="@string/result_of_dice_roll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/_iv2"
-        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125"
+        app:layout_constraintVertical_bias="0.202"
         app:srcCompat="@drawable/die_1" />
-
 
     <Button
         android:id="@+id/_btnRoll"
         android:layout_width="185dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="76dp"
         android:text="@string/roll_the_dice"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_enhancer"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.778" />
 
     <Button
         android:id="@+id/_secondActBtn"
@@ -89,61 +89,80 @@
         android:text="@string/launch_scoreboardBTN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_totalScore"
-        app:layout_constraintVertical_bias="0.947" />
+        app:layout_constraintTop_toBottomOf="@+id/_btnRoll" />
 
     <TextView
         android:id="@+id/_enhancer"
         android:layout_width="213dp"
         android:layout_height="25dp"
+        android:layout_marginBottom="152dp"
         android:fontFamily="@font/almendra_sc"
         android:gravity="center"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/_secondActBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/_Score"
         android:layout_width="169dp"
         android:layout_height="33dp"
-        android:layout_marginBottom="48dp"
         android:fontFamily="@font/almendra_sc"
         android:gravity="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_btnRoll" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_nameTv"
+        app:layout_constraintBottom_toTopOf="@+id/_iv1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.311"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.568" />
 
     <TextView
         android:id="@+id/_totalScore"
-        android:layout_width="230dp"
+        android:layout_width="303dp"
         android:layout_height="22dp"
+        android:layout_marginTop="184dp"
         android:gravity="center"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/_btnRoll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/_iv2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/_PlayerName" />
 
     <TextView
         android:id="@+id/_lblScoreThisRoll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/almendra_sc"
         android:text="@string/score_this_roll"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/_enhancer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_iv2" />
+
+    <EditText
+        android:id="@+id/_PlayerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/type_name_here"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/_iv2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -2,6 +2,7 @@
   <dictionary name="magic">
     <words>
       <w>descr</w>
+      <w>listof</w>
     </words>
   </dictionary>
 </component>

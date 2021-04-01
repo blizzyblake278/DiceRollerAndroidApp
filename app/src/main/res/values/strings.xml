@@ -16,6 +16,9 @@
     <string name="type_name_here">type name here</string>
     <string name="scoreboard">SCOREBOARD</string>
     <string name="addColon">: </string>
+    <string name="thanks_for_playing">Thanks for playing, </string>
+    <string name="return_to_game">Return to Game</string>
+
 
 
 </resources>

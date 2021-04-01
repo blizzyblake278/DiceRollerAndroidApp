@@ -4,31 +4,30 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.animation.AnimationUtils
+import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-//@Suppress("UNSAFE_CALL_ON_PARTIALLY_DEFINED_RESOURCE")
 class MainActivity : AppCompatActivity() {
 
     private var dice: Dice = Dice(0,0,0,0,0)
-//    private var scoreList : ArrayList<Double> = ArrayList()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val sharedPreference : SharedPreferences = getSharedPreferences("DICE_ROLLER_APP", Context.MODE_PRIVATE)
         val editor = sharedPreference.edit()
-
-
         //sets dice images to 1,2,3
         dice.resetResults()
+
 
         //roll dice
         _btnRoll.setOnClickListener {
@@ -58,6 +57,10 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+
+
+
 
     // Private Functions
     private fun setImages() {
@@ -158,7 +161,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
 }
+
+
+
 
 
 

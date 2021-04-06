@@ -4,21 +4,22 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.KeyEvent
+import android.preference.PreferenceManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.animation.AnimationUtils
-import android.widget.ListView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.w3c.dom.Text
 
 
 class MainActivity : AppCompatActivity() {
 
     private var dice: Dice = Dice(0,0,0,0,0)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,31 +34,38 @@ class MainActivity : AppCompatActivity() {
         _btnRoll.setOnClickListener {
             val animateSpin = AnimationUtils.loadAnimation(this, R.anim.spin)
             _btnRoll.startAnimation(animateSpin)
-            dice.rollDice()
-            setImages()
-            totalScore()
-
-            //Shared Preferences - persistent storage
-            editor.putString("playerName", _PlayerName.text.toString())
-            editor.putString("playerScore", dice._totalScore.toString())
+           if(_PlayerName.text.toString() == ""){
+               Toast.makeText(applicationContext, "Please enter a name", Toast.LENGTH_LONG).show()
+           }
+            else{
+               dice.rollDice()
+               setImages()
+               totalScore()
+           }
+                if (sharedPreference.contains(_PlayerName.text.toString())) {
+                    val tmpScore = sharedPreference.getString(_PlayerName.text.toString(), null)
+                    if (tmpScore != null) {
+                        if (dice._totalScore > tmpScore.toInt()) {
+                            editor.putString(_PlayerName.text.toString(),
+                                dice._totalScore.toString())
+                        }
+                    }
+                }
+                else {
+                    editor.putString(_PlayerName.text.toString(), dice._totalScore.toString())
+                }
             editor.apply()
+//            editor.clear()
 
         }
 
         //ScoreBoard
         _secondActBtn.setOnClickListener {
             val scoreBoardIntent = Intent(this, Scoreboard::class.java)
-            val playerName = sharedPreference.getString("playerName", null)
-            val highScore = sharedPreference.getString("playerScore", null)
-
-            scoreBoardIntent.putExtra("playerName", playerName)
-            scoreBoardIntent.putExtra("playerScore", highScore)
+            scoreBoardIntent.putExtra("currentPlayer", _PlayerName.text.toString())
             startActivity(scoreBoardIntent)
-
-
-        }
+         }
     }
-
 
 
 
@@ -164,6 +172,7 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+
 
 
 
